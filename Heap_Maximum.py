@@ -4,12 +4,13 @@ class  HeapMaximum:
         self.currentSize=0
 
     def percUp(self,i):
-        while i//2>0:
-            if self.heapLst[i]<self.heapLst[i//2]:
-                temp=self.heapLst[i//2]
-                self.heapLst[i//2]=self.heapLst[i]
+        half=i//2
+        while half>0:
+            if self.heapLst[i]<self.heapLst[half]:
+                temp=self.heapLst[half]
+                self.heapLst[half]=self.heapLst[i]
                 temp=self.heapLst[i]
-            i=i//2
+            i=half
 
     def insertion(self, x):
         self.heapLst.append(x)
@@ -23,36 +24,22 @@ class  HeapMaximum:
                 temp=self.heapLst[i]
                 self.heapLst[i]=self.heapLst[sm]
                 self.heapLst[sm]=temp
-            i=sm
-            
-            
-    def minChild(self, i):
-           if i * 2 + 1>self.currentSize:
-               return i * 2
-           else:
-               if self.heapList[i * 2] < self.heapList[i * 2 + 1]:
-                   return i * 2
-               else:
-                   return i * 2 + 1
-
-      def delMin(self):
-          retval=self.heapList[1]
-          self.heapLst[1]=self.heapLst[self.currentSize]
-          self.currentSize=self.currentSize - 1
-          self.heapLst.pop()
-          self.percDown(1)
-          return retval
-            
+            i=sm           
             
     def maxChild(self, i):
-        if i * 2 + 1<self.currentSize:
-            return i * 2
+        doub=i * 2
+        if doub + 1<self.currentSize:
+            return doub
         else:
-            if self.heapLst[i * 2]>self.heapLst[i * 2 + 1]:
-                return i * 2
+            if self.heapLst[doub]>self.heapLst[doub + 1]:
+                return doub
             else:
-                return i * 2 + 1
+                return doub + 1
 
+    def getMax(self) :
+        return self.heapLst[1]
+            
+            
     def delMax(self):
         retval=self.heapLst[1]
         self.heapLst[1]=self.heapLst[self.currentSize]
