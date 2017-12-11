@@ -1,15 +1,21 @@
 class  HeapMaximum:
-    def __init__(self):
+    def __init__(self, arr=[]):
         self.heapLst=[0]
         self.currentSize=0
-
+        
+        
+    def insertArr(self, arr=[]):
+        for i in arr:
+            self.insert(i)
+            
+            
     def percUp(self,i):
         half=i//2
         while half>0:
             if self.heapLst[i]<self.heapLst[half]:
                 temp=self.heapLst[half]
                 self.heapLst[half]=self.heapLst[i]
-                temp=self.heapLst[i]
+                self.heapLst[i]=temp
             i=half
 
     def insertion(self, x):
