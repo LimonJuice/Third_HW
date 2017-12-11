@@ -6,7 +6,7 @@ import timeit
 import numpy as np
 import matplotlib.pyplot as plt
 
-iterab = np.logspace(1.0, np.log10(10000, dtype=float), base=10, endpoint=False, dtype=int)
+iterab = np.logspace(1.0, np.log10(10000, dtype=float), base=10, endpoint=False, dtype=int, num=10)
 
 x = random.choices(range(iterab[-1] + 1), k=iterab[-1])
 
