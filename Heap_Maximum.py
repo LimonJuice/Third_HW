@@ -26,7 +26,7 @@ class  HeapMaximum:
     def percDown(self, i):
         while (i * 2)<=self.currentSize:
             sm=self.minChild(i)
-            if self.heapLst[i]>self.heapLst[sm]:
+            if self.heapLst[i]<self.heapLst[sm]:
                 temp=self.heapLst[i]
                 self.heapLst[i]=self.heapLst[sm]
                 self.heapLst[sm]=temp
@@ -34,7 +34,7 @@ class  HeapMaximum:
             
     def maxChild(self, i):
         doub=i * 2
-        if doub + 1<self.currentSize:
+        if doub + 1>self.currentSize:
             return doub
         else:
             if self.heapLst[doub]>self.heapLst[doub + 1]:
@@ -51,6 +51,6 @@ class  HeapMaximum:
         self.heapLst[1]=self.heapLst[self.currentSize]
         self.currentSize=self.currentSize - 1
         self.heapLst.pop()
-        self.percUp(1)
+        self.percDown(1)
         return retval
 
