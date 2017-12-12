@@ -89,11 +89,11 @@ class TreeNode:
 
 class BinaryTree:
 
-    def __init__(self):
+    def __init__(self, arr=[]):
         self.root = None
         self.size = 0
     
-    def insertArr(self, arr=[]):
+    def insertArr(self, arr):
         for i in arr:
             sekf.put(i)
 
