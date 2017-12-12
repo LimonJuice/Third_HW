@@ -83,7 +83,7 @@ def Heap_time(iterab, x, Graph=True):
         plt.figure(3)
         plt.subplot(211)
         plt.title('Heap 1st')
-        Show_graph(iterab, [Heap_time()['final']], ['Final Time'])
+        Show_graph(iterab, [Heap_time['final']], ['Final Time'])
         plt.subplot(212)
         Show_graph(iterab, [Heap['init_heap']], ['Element Insertion'])
         plt.show()
