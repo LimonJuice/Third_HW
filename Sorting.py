@@ -38,7 +38,8 @@ def mergeSort(lst):
 def quickSort(lst):
     if len(lst)>1:
         piv=lst[0]
-        left, right=[], []
+        left=[]
+        right=[]
         for i in range(1, len(lst)):
             if (lst[i]<piv):
                 left.append(lst[i])
