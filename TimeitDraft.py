@@ -96,18 +96,18 @@ def Heap_time(iterab, x, Graph=True):
 
 
 
-def Comparisons(Tree_Time, Heap_Time):
+def Comparisons(Tree_time, Heap_time):
     plt.figure(5)
 
     plt.subplot(311)
     plt.title('Heap compared to Tree')
-    Show_graph(iterab, [Tree_Time['final'], Heap_Time['final']], ['Tree final time', 'Heap final time'])
+    Show_graph(iterab, [Tree_time['final'], Heap_time['final']], ['Tree final time', 'Heap final time'])
 
     plt.subplot(312)
-    Show_graph(iterab, [Tree_Time['init_tree'], Heap_Time['init_heap']], ['Tree Insertion', 'Heap insertion'])
+    Show_graph(iterab, [Tree_time['init_tree'], Heap_time['init_heap']], ['Tree Insertion', 'Heap insertion'])
 
     plt.subplot(313)
-    Show_graph(iterab, [Tree_Time['insert_tree'], Heap_Time['insert_heap']], ['Tree Random Insertion', 'Heap Random Insertion'])
+    Show_graph(iterab, [Tree_time['insert_tree'], Heap_time['insert_heap']], ['Tree Random Insertion', 'Heap Random Insertion'])
 
     plt.show()
 
@@ -124,4 +124,4 @@ def Show_graph(iterab, x, lab):
     plt.legend(loc='upper left', shadow=True)
     
     
-print(Sorting_time(iterab,x), Tree_time(iterab,x), Heap_time(iterab,x))
+
