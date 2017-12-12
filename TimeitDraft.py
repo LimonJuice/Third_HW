@@ -28,7 +28,7 @@ def Sorting_t(iterab, x):
 
 # Measurements of the Binary Search Tree (insertion, get and delete a random element, find max)
 def Tree_time(iterab, x, Graph=True):
-    Tree = {'init_t': [], 'insert_tree': [], 'get_tree': [], 'max_tree': [], 'delete_tree': [], 'final': []}
+    Tree = {'init_tree': [], 'insert_tree': [], 'get_tree': [], 'max_tree': [], 'delete_tree': [], 'final': []}
     for i in iterab:
         ranel = random.choice(x[:i])
         bst = t.BinaryTree(x[:i])
@@ -54,7 +54,7 @@ def Tree_time(iterab, x, Graph=True):
         plt.show()
 
         plt.figure(2)
-        plt.title('Binary Search Tree 2nd')
+        plt.title('Binary Tree 2nd')
         Show_graph(iterab, [Tree['insert_tree'], Tree['get_tree'], Tree['max_tree'], Tree['delete_tree']  ],
                    ['Random Get', 'Random Delete', 'Find max', 'Random Insert'])
         plt.show()
@@ -122,3 +122,6 @@ def Show_graph(iterab, x, lab):
     plt.ylabel('Time')
     plt.xlabel('Len of our list')
     plt.legend(loc='upper left', shadow=True)
+    
+    
+print(Sorting_time(iterab,x), Tree_time(iterab,x), Heap_time(iterab,x))
