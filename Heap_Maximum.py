@@ -4,7 +4,7 @@ class  HeapMaximum:
         self.currentSize=0
         
         
-    def insertArr(self, arr=[]):
+    def insertArr(self, arr):
         for i in arr:
             self.insert(i)
             
